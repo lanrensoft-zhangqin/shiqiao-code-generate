@@ -447,7 +447,10 @@ public static void main(String[] args) {
 
 ![](http://qny.lanrensoft.cn/20200326010937.png)
 
+------------
+
+
 结语
 
-> 这里只是演示了一个简单的思路，工欲善其事必先利其器，我们平常也会选择好的ide及ide插件来开发，但是遇到一些特殊的自定义的需求我们可以多思考下有没有更好的方式去实现。
+> 这里只是演示了一个简单的思路，工欲善其事必先利其器，我们平常也会选择好的ide及ide插件来开发，但是遇到一些特殊需求我们可以多思考下有没有更好的方式去实现。
 源码已提交至github（[https://github.com/lanrensoft-zhangqin/shiqiao-code-generate/tree/master](https://github.com/lanrensoft-zhangqin/shiqiao-code-generate/tree/master)）
