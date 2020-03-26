@@ -62,52 +62,7 @@
 
 #### 代码实现
 
-##### 数据源
 
-> 生成代码用到的数据表对象
-
-```java
-public class TableBO {
-    //标题
-    private String title;
-    //名称
-    private String name;
-    //是否可以删除
-    private Integer canDelete;
-    //是否能新增
-    private Integer canAdd;
-    //是否可编辑
-    private Integer canEdit;
-    //是否可查询
-    private Integer canQuery;
-    //列
-    private List<ColumnBO> columns;
-}
-```
-> 表具体的字段
-
-```java
-public class ColumnBO {
-     //标题
-    private String title;
-    //名称
-    private String name;
-    //字段长度
-    private Integer length;
-    //ui组件
-    private FormUiEnum ui;
-    //组件值
-    private String uiValue;
-    //是否必填
-    private boolean isRequired;
-    //是否是主键
-    private boolean isId;
-    //java类型
-    private String javaType;
-    //是否能在页面新增
-    private Boolean canAdd;
-}
-```
 ##### 制作模板
 
 > 原页面展示效果如下
@@ -249,6 +204,53 @@ layui.use(['form', 'layedit', 'laydate', 'layer'], function(){
 </html>
 ```
 > 可以看到已经把能通过代码动态填充的部分用占位符替代
+
+##### 数据源
+
+> 生成代码用到的数据表对象
+
+```java
+public class TableBO {
+    //标题
+    private String title;
+    //名称
+    private String name;
+    //是否可以删除
+    private Integer canDelete;
+    //是否能新增
+    private Integer canAdd;
+    //是否可编辑
+    private Integer canEdit;
+    //是否可查询
+    private Integer canQuery;
+    //列
+    private List<ColumnBO> columns;
+}
+```
+> 表具体的字段
+
+```java
+public class ColumnBO {
+     //标题
+    private String title;
+    //名称
+    private String name;
+    //字段长度
+    private Integer length;
+    //ui组件
+    private FormUiEnum ui;
+    //组件值
+    private String uiValue;
+    //是否必填
+    private boolean isRequired;
+    //是否是主键
+    private boolean isId;
+    //java类型
+    private String javaType;
+    //是否能在页面新增
+    private Boolean canAdd;
+}
+```
 
 ##### 数据绑定
 
