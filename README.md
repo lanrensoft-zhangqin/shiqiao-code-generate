@@ -62,7 +62,9 @@
 
 #### 代码实现
 
-- 生成代码用到的表对象
+##### 数据源
+
+> 生成代码用到的数据表对象
 
 ```java
 public class TableBO {
@@ -82,7 +84,7 @@ public class TableBO {
     private List<ColumnBO> columns;
 }
 ```
-- 表具体的字段
+> 表具体的字段
 
 ```java
 public class ColumnBO {
