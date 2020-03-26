@@ -46,7 +46,7 @@
 
 1. 我们可以写个标准的页面来做我们的模板
 2. 将我们平常复制修改的地方修改为占位符
-3. 我们可以通过代码将数据库表结构信息或者自己定义的数据信息绑定到模板上生成一个新的页面
+3. 我们可以通过代码将数据（可以通过数据库、自定义等方式去获取）绑定到模板上生成一个新的页面
 
 ------------
 
@@ -60,9 +60,9 @@
 3. 进行绑定
 4. 生成文件
 
-#### 实现代码
+#### 代码实现
 
-生成代码用到的表对象
+- 生成代码用到的表对象
 
 ```java
 public class TableBO {
@@ -82,7 +82,8 @@ public class TableBO {
     private List<ColumnBO> columns;
 }
 ```
-表具体的字段
+- 表具体的字段
+
 ```java
 public class ColumnBO {
      //标题
@@ -105,12 +106,14 @@ public class ColumnBO {
     private Boolean canAdd;
 }
 ```
-我们用下面表单页面制作模板
+##### 制作模板
 
-效果图
+> 原页面展示效果如下
+
 ![](http://qny.lanrensoft.cn/20200326011004.png)
 
-源码
+> 源码
+
 ```html
 <!DOCTYPE html>
 <html>
@@ -198,7 +201,8 @@ layui.use(['form', 'layedit', 'laydate', 'layer'], function(){
   </body>
 </html>
 ```
-将可以数据绑定的地方使用占位符代替制作成模板
+> 将可以数据绑定的地方使用占位符代替制作成模板
+
 ```html
 <!DOCTYPE html>
 <html>
@@ -243,10 +247,6 @@ layui.use(['form', 'layedit', 'laydate', 'layer'], function(){
 </html>
 ```
 > 可以看到已经把能通过代码动态填充的部分用占位符替代
-
-接下来我通过演示通过程序实现这个代码的编写
-
-#### 代码实现
 
 ##### 数据绑定
 
@@ -315,7 +315,7 @@ public class UiTemplateContentHandler implements ITemplateContentHandler {
     }
 }
 ```
-具体组件内容获取
+##### 具体组件内容获取
 
 > 文本框获取展示
 
@@ -336,7 +336,8 @@ public class InputUiHtmlHandler implements IUiHtmlHandelr {
     }
 }
 ```
-编写测试用例
+##### 编写测试用例
+
 >  代码生成数据来源测试是使用自己定义的数据而没有读取数据库，可以读取数据库，将数据库的信息映射到我们的对象中
 
 ```java
@@ -399,7 +400,8 @@ public static void main(String[] args) {
 
 
 ```
-运行程序输出内容为：
+> 运行程序输出内容为：
+
 ```html
 <!DOCTYPE html>
 <html>
@@ -465,7 +467,6 @@ public static void main(String[] args) {
 </html> 
 
 ```
-效果图
 
 > 将输出内容打开之后可以看到如下图，页面生成成功
 
@@ -474,7 +475,7 @@ public static void main(String[] args) {
 ------------
 
 
-结语
+##### 结语
 
 > 这里只是演示了一个简单的思路，工欲善其事必先利其器，我们平常也会选择好的ide及ide插件来开发，但是遇到一些特殊需求我们可以多思考下有没有更好的方式去实现。
 
